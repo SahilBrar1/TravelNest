@@ -90,6 +90,10 @@ app.use("/listings", listingRouter); // for listings routes
 app.use("/listings/:id/reviews", reviewRouter); //for review routes
 app.use("/", userRouter); //for user routes
 
+app.get('/', (req, res) => {
+    res.render('index.ejs');
+});
+
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
 });
@@ -105,27 +109,3 @@ app.listen(8080, ()=> {
     console.log("Listening on port 8080");
 });
 
-//Test Routing
-// app.get("/testListing", async (req, res) => {
-//     let sampleListing = new Listing({
-//         title: "My New Villa",
-//         description : "By the beach",
-//         price: 1200,
-//         location : "Calangute, Goa",
-//         country: "India"
-//     });
-
-//     await sampleListing.save()
-//     console.log("sample was saved");
-//     res.send("successful testing");
-// });
-
-// app.get("/demouser", async(req, res)=> {
-//     let fakeUser = new User({
-//         email: "student@gmail.com",
-//         username: "delta-student"
-//     });
-
-//     let registeredUser = await User.register(fakeUser, "helloworld");
-//     res.send(registeredUser);
-// })
