@@ -90,9 +90,6 @@ app.use("/listings", listingRouter); // for listings routes
 app.use("/listings/:id/reviews", reviewRouter); //for review routes
 app.use("/", userRouter); //for user routes
 
-app.get('/', (req, res) => {
-    res.render('index.ejs');
-});
 
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
