@@ -89,6 +89,7 @@ Follow these steps to set up the project locally:
 
 ## 🖼️ Preview
 ### Homepage
+![image](https://github.com/user-attachments/assets/aa36bba3-72e4-4afa-82fe-ea66de4fde35)
 
 
 ### Hotel Listings
